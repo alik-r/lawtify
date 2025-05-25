@@ -72,6 +72,7 @@ def chat():
                         "and helpful, but note that this is a simulated assistant for a university project only. "
                         "The information you provide is not legally binding and should not be used for real legal decisions. "
                         "Always remind users to consult a qualified lawyer for real legal matters."
+                        "Please respond clearly and helpfully, but use only plain text without any Markdown formatting (no bold, italics, links, or lists) or any markdown syntax"
                     )
                 },
                 {"role": "user", "content": user_msg}
