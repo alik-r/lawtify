@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chatbot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <nav class="bg-white shadow p-4">
+    <a href="/" class="text-blue-600 hover:underline">← Back to Home</a>
+  </nav>
+
+  <main class="max-w-2xl mx-auto py-10 px-4">
+    <h1 class="text-3xl font-bold mb-4">Ask a Legal Question</h1>
+
+    <!-- Chat Log -->
+    <div id="chatLog" class="border rounded p-4 h-96 overflow-y-auto bg-white space-y-4 mb-4"></div>
+
+    <!-- Input -->
+    <div class="flex space-x-2">
+      <input id="msgInput" type="text" placeholder="Type your message..." class="flex-1 p-2 border rounded" />
+      <button id="sendBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send</button>
+    </div>
+  </main>
+
+  <script>
+    const chatLog = document.getElementById('chatLog');
+    const msgInput = document.getElementById('msgInput');
+    const sendBtn = document.getElementById('sendBtn');
+
+    function appendMessage(sender, text) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = sender === 'user' ? 'text-right' : 'text-left';
+      msgDiv.innerHTML = `<span class="inline-block px-3 py-2 rounded ${sender === 'user' ? 'bg-blue-100' : 'bg-gray-200'}">${text}</span>`;
+      chatLog.appendChild(msgDiv);
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const message = msgInput.value.trim();
+      if (!message) return;
+
+      appendMessage('user', message);
+      msgInput.value = '';
+
+      try {
+        const res = await fetch('/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message })
+        });
+
+        const data = await res.json();
+        if (data.response) {
+          appendMessage('bot', data.response);
+        } else {
+          appendMessage('bot', 'Sorry, something went wrong.');
+        }
+      } catch (err) {
+        appendMessage('bot', 'Sorry, I’m having trouble responding right now.');
+      }
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    msgInput.addEventListener('keypress', e => {
+      if (e.key === 'Enter') sendMessage();
+    });
+  </script>
+
+</body>
+</html>
