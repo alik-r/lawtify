@@ -54,8 +54,20 @@ def chat():
 
     try:
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": user_msg}]
+            model="gpt-4o",
+            messages=[
+                {
+                    "role": "system", 
+                    "content": (
+                        "You are a knowledgeable legal assistant specializing in the laws and legal systems "
+                        "of Azerbaijan and other post-Soviet countries. Your responses should be clear, realistic, "
+                        "and helpful, but note that this is a simulated assistant for a university project only. "
+                        "The information you provide is not legally binding and should not be used for real legal decisions. "
+                        "Always remind users to consult a qualified lawyer for real legal matters."
+                    )
+                },
+                {"role": "user", "content": user_msg}
+            ]
         )
         bot_msg = response.choices[0].message.content.strip()
         return jsonify({'response': bot_msg})
