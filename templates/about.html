@@ -2,19 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Lawtify</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-  <nav class="bg-white shadow p-4">
-    <a href="/" class="text-blue-600 hover:underline">← Back to Home</a>
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="text-2xl font-bold text-blue-600">Lawtify</a>
+        </div>
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <a href="/" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Home</a>
+          <a href="/faq" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">FAQ</a>
+          <a href="/contact" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Contact</a>
+          <a href="/chat" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Chat</a>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <main class="max-w-3xl mx-auto py-10 px-4">
-    <h1 class="text-3xl font-bold mb-4">About LegalTech</h1>
-    <p class="text-lg">We are a small team of legal professionals and technologists dedicated to making legal assistance more accessible through modern web technology. Our goal is to simplify how people get help for common legal issues—no expensive retainers or complex jargon.</p>
-  </main>
+  <!-- About Hero -->
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Our Story & Mission</h1>
+      <p class="text-lg text-gray-600">Founded by legal professionals and technologists in Azerbaijan, Lawtify exists to bridge the gap between legal expertise and everyday people. We believe in accessible, transparent, and affordable legal support.</p>
+    </div>
+  </section>
+
+  <!-- Team & Values -->
+  <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Team -->
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet the Team</h2>
+        <p class="text-gray-600 mb-6">Our multidisciplinary team combines expertise in law, software engineering, and UX design to deliver a seamless platform.</p>
+        <ul class="space-y-4">
+          <li>
+            <h3 class="text-xl font-semibold">Javad Mammadov</h3>
+            <p class="text-gray-600">Senior Legal Advisor with 10+ years of experience in corporate and civil law.</p>
+          </li>
+          <li>
+            <h3 class="text-xl font-semibold">Leyla Aliyeva</h3>
+            <p class="text-gray-600">Lead Software Engineer specializing in backend systems and API integrations.</p>
+          </li>
+          <li>
+            <h3 class="text-xl font-semibold">Orkhan Hasanov</h3>
+            <p class="text-gray-600">Front-End Developer and UX enthusiast, crafting intuitive interfaces.</p>
+          </li>
+        </ul>
+      </div>
+      <!-- Values -->
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <span class="inline-block mr-3 mt-1 bg-blue-100 text-blue-600 p-2 rounded-full">🤝</span>
+            <div>
+              <h3 class="text-xl font-semibold">Integrity</h3>
+              <p class="text-gray-600">We maintain honesty and transparency in all interactions.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="inline-block mr-3 mt-1 bg-blue-100 text-blue-600 p-2 rounded-full">💡</span>
+            <div>
+              <h3 class="text-xl font-semibold">Innovation</h3>
+              <p class="text-gray-600">We leverage cutting-edge technology to simplify legal processes.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="inline-block mr-3 mt-1 bg-blue-100 text-blue-600 p-2 rounded-full">🌍</span>
+            <div>
+              <h3 class="text-xl font-semibold">Accessibility</h3>
+              <p class="text-gray-600">We make legal help approachable and affordable for everyone.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-blue-600">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Join Us on Our Journey</h2>
+      <p class="text-lg text-blue-100 mb-6">Ready to experience accessible legal support? Get in touch or start a chat now.</p>
+      <a href="/contact" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100">Contact Us</a>
+      <a href="/chat" class="inline-block ml-4 bg-blue-100 text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-200">Chat with Assistant</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-gray-400">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm">&copy; 2025 Lawtify. All rights reserved.</p>
+        <div class="space-x-4 mt-4 md:mt-0">
+          <a href="/" class="hover:text-white">Home</a>
+          <a href="/faq" class="hover:text-white">FAQ</a>
+          <a href="/contact" class="hover:text-white">Contact</a>
+          <a href="/chat" class="hover:text-white">Chat</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

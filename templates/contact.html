@@ -2,30 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Set Appointment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Lawtify</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-  <nav class="bg-white shadow p-4">
-    <a href="/" class="text-blue-600 hover:underline">← Back to Home</a>
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="text-2xl font-bold text-blue-600">Lawtify</a>
+        </div>
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <a href="/" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Home</a>
+          <a href="/about" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">About</a>
+          <a href="/faq" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">FAQ</a>
+          <a href="/chat" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Chat</a>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <main class="max-w-2xl mx-auto py-10 px-4">
-    <h1 class="text-3xl font-bold mb-6">Set an Appointment</h1>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
+    <div class="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Get in Touch</h1>
+      <p class="text-lg sm:text-xl">Have questions or need personalized assistance? Fill out the form below, and our team will reach out promptly.</p>
+    </div>
+  </section>
 
-    <form id="appointment-form" class="space-y-4">
-      <input type="text" name="name" placeholder="Full Name" required class="w-full p-2 border rounded" />
-      <input type="email" name="email" placeholder="Email" required class="w-full p-2 border rounded" />
-      <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-2 border rounded" />
-      <input type="text" name="issue" placeholder="Type of Legal Issue" required class="w-full p-2 border rounded" />
-      <input type="datetime-local" name="date" required class="w-full p-2 border rounded" />
-      <textarea name="message" placeholder="Message" required class="w-full p-2 border rounded"></textarea>
-      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+  <!-- Contact Form Section -->
+  <section class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg -mt-16 p-8 sm:p-12">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Set an Appointment</h2>
+    <form id="appointment-form" class="space-y-6">
+      <div>
+        <label class="block text-gray-700">Full Name</label>
+        <input type="text" name="name" placeholder="Your Name" required class="w-full mt-1 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      </div>
+      <div>
+        <label class="block text-gray-700">Email Address</label>
+        <input type="email" name="email" placeholder="you@example.com" required class="w-full mt-1 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      </div>
+      <div>
+        <label class="block text-gray-700">Phone Number</label>
+        <input type="tel" name="phone" placeholder="(123) 456-7890" required class="w-full mt-1 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      </div>
+      <div>
+        <label class="block text-gray-700">Type of Legal Issue</label>
+        <input type="text" name="issue" placeholder="e.g. Contract, Property" required class="w-full mt-1 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      </div>
+      <div>
+        <label class="block text-gray-700">Preferred Date & Time</label>
+        <input type="datetime-local" name="date" required class="w-full mt-1 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      </div>
+      <div>
+        <label class="block text-gray-700">Message</label>
+        <textarea name="message" rows="4" placeholder="Describe your situation..." required class="w-full mt-1 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+      <div class="flex justify-between items-center">
+        <div id="status" class="text-sm"></div>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit</button>
+      </div>
     </form>
+  </section>
 
-    <div id="status" class="mt-4 text-sm"></div>
-  </main>
+  <!-- Footer -->
+  <footer class="bg-gray-800 mt-16">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-gray-400 flex flex-col sm:flex-row justify-between items-center">
+      <p class="text-sm">&copy; 2025 Lawtify. All rights reserved.</p>
+      <div class="space-x-4 mt-4 sm:mt-0">
+        <a href="/" class="hover:text-white">Home</a>
+        <a href="/about" class="hover:text-white">About</a>
+        <a href="/faq" class="hover:text-white">FAQ</a>
+        <a href="/chat" class="hover:text-white">Chat</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const form = document.getElementById('appointment-form');
@@ -33,7 +87,6 @@
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
       const data = {
         name: form.name.value,
         email: form.email.value,
@@ -42,28 +95,27 @@
         date: form.date.value,
         message: form.message.value
       };
-
       try {
-        const response = await fetch('/submit-form', {
+        const res = await fetch('/submit-form', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(data)
         });
-
-        const result = await response.json();
+        const result = await res.json();
         if (result.status === 'success') {
-          statusDiv.textContent = 'Appointment submitted successfully.';
-          statusDiv.className = 'text-green-600 mt-4';
+          statusDiv.textContent = 'Appointment submitted successfully!';
+          statusDiv.className = 'text-green-600';
           form.reset();
         } else {
           statusDiv.textContent = 'Error: ' + (result.message || 'Something went wrong.');
-          statusDiv.className = 'text-red-600 mt-4';
+          statusDiv.className = 'text-red-600';
         }
       } catch (err) {
         statusDiv.textContent = 'Submission failed. Please try again later.';
-        statusDiv.className = 'text-red-600 mt-4';
+        statusDiv.className = 'text-red-600';
       }
     });
   </script>
+
 </body>
 </html>

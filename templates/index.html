@@ -2,30 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LegalTech Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawtify Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 antialiased">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow p-4 flex justify-between">
-    <div class="text-xl font-bold">LegalTech</div>
-    <div class="space-x-4">
-      <a href="/about" class="text-blue-600 hover:underline">About</a>
-      <a href="/faq" class="text-blue-600 hover:underline">FAQ</a>
-      <a href="/contact" class="text-blue-600 hover:underline">Contact</a>
-      <a href="/chat" class="text-blue-600 hover:underline">Chat</a>
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="text-2xl font-bold text-blue-600">Lawtify</a>
+        </div>
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <a href="/about" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">About</a>
+          <a href="/faq" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">FAQ</a>
+          <a href="/contact" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Contact</a>
+          <a href="/chat" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium">Chat</a>
+        </div>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="text-center py-20 px-4">
-    <h1 class="text-4xl font-bold mb-4">Accessible Legal Help. Simplified.</h1>
-    <p class="text-lg mb-6">Book appointments, get instant advice, and explore answers—all in one place.</p>
-    <a href="/contact" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
-      Set Appointment
-    </a>
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Accessible Legal Help. Simplified.</h1>
+      <p class="text-xl text-gray-600 mb-8">Your one-stop platform for booking legal appointments, getting instant AI-powered advice, and learning about common legal issues.</p>
+      <a href="/contact" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-blue-700">Set an Appointment</a>
+    </div>
   </section>
+
+  <!-- About & Services -->
+  <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- About -->
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">About Us</h2>
+        <p class="text-gray-600 mb-4">We are a team of legal professionals and technologists on a mission to make legal support more approachable for everyone. Based in Azerbaijan with expertise across post-Soviet jurisdictions, we use modern web technologies to bring law to your fingertips.</p>
+        <a href="/about" class="text-blue-600 hover:underline font-medium">Learn more about our story &rarr;</a>
+      </div>
+      <!-- Services -->
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <span class="inline-block mt-1 mr-3 bg-blue-100 text-blue-600 p-2 rounded-full">📅</span>
+            <div>
+              <h3 class="text-xl font-semibold">Appointment Booking</h3>
+              <p class="text-gray-600">Schedule meetings with legal experts at a time that suits you.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="inline-block mt-1 mr-3 bg-blue-100 text-blue-600 p-2 rounded-full">💬</span>
+            <div>
+              <h3 class="text-xl font-semibold">AI-Powered Chat</h3>
+              <p class="text-gray-600">Get instant, simulated legal advice powered by advanced language models.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="inline-block mt-1 mr-3 bg-blue-100 text-blue-600 p-2 rounded-full">📚</span>
+            <div>
+              <h3 class="text-xl font-semibold">Legal Resources</h3>
+              <p class="text-gray-600">Access FAQs and guides on common legal issues in Azerbaijan and the region.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-blue-600">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Ready to get started?</h2>
+      <p class="text-lg text-blue-100 mb-6">Book an appointment or chat with our AI assistant now.</p>
+      <a href="/contact" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100">Set an Appointment</a>
+      <a href="/chat" class="inline-block ml-4 bg-blue-100 text-black px-6 py-3 rounded-lg font-medium hover:bg-blue-200">Open Chatbot</a>
+    </div>
+  </section>
+
+  <!-- Contact Preview -->
+  <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+    <p class="text-gray-600 mb-6">Have questions or need personalized help? Reach out to us and we'll get back to you promptly.</p>
+    <a href="/contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Contact Us</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-gray-400">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm">&copy; 2025 Lawtify. All rights reserved.</p>
+        <div class="space-x-4 mt-4 md:mt-0">
+          <a href="/about" class="hover:text-white">About</a>
+          <a href="/faq" class="hover:text-white">FAQ</a>
+          <a href="/contact" class="hover:text-white">Contact</a>
+          <a href="/chat" class="hover:text-white">Chat</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
