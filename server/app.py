@@ -37,8 +37,16 @@ def contact():
 def submit_form():
     data = request.get_json()
     try:
-        with open('submissions.json', 'a') as f:
-            f.write(json.dumps(data) + '\n')
+        submissions = []
+        if os.path.exists('submissions.json'):
+            with open('submissions.json', 'r') as f:
+                try:
+                    submissions = json.load(f)
+                except json.JSONDecodeError:
+                    submissions = []
+        submissions.append(data)
+        with open('submissions.json', 'w') as f:
+            json.dump(submissions, f, indent=4)
         return jsonify({'status': 'success'})
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
